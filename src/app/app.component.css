@@ -1,0 +1,45 @@
+/* app.component.css */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+tr:hover {
+  background-color: #f5f5f5;
+}
+
+select {
+  padding: 5px;
+  font-size: 16px;
+  margin-top: 10px;
+}
+.container {
+  text-align: right;
+  padding: 10px; /* Adicione algum espaçamento ao redor do botão */
+}
+
+.button {
+  background-color: #bfc2bf; /* Cor de fundo verde */
+  color: white; /* Cor do texto branco */
+  padding: 10px 20px; /* Espaçamento interno do botão */
+  border: none; /* Remova a borda */
+  border-radius: 5px; /* Adicione bordas arredondadas */
+  cursor: pointer; /* Cursor de ponteiro ao passar o mouse */
+  font-size: 16px; /* Tamanho da fonte */
+}
+
+.button:hover {
+  background-color: #b5beb6; /* Altera a cor de fundo ao passar o mouse */
+}

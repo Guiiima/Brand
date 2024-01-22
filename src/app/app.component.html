@@ -1,0 +1,79 @@
+<div class="container">
+<button class="button" (click)="proximonivel()">Proximo nivel</button>
+</div>
+<table>
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Saldo</th>
+      <th>Sobrenomes</th>
+      <th>Divida</th>
+      <th>Pago para TS</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let cliente of Agrupado">
+      <td>{{ cliente.nome }}</td>
+      <td>{{ cliente.saldo }}</td>
+      <ng-container *ngFor="let detalhe of cliente.detalhes">
+        <td>{{ detalhe.sobrenomes }}</td>
+        <td>{{ detalhe.divida }}</td>
+        <td>{{ detalhe.pagoParaTS }}</td>
+      </ng-container>
+    </tr>
+  </tbody>
+</table>
+
+
+<!-- app.component.html -->
+<!-- <div class="container">
+<button class="button" onclick="proximonivel() ">Proximo nivel</button>
+</div>
+
+
+ <table>
+  <tr>
+    <th>Nome</th>
+    <th>Signo</th>
+    <th>Sobrenome</th>
+  </tr>
+  <ng-container *ngFor="let pessoa of pessoas; let i = index">
+    <tr *ngIf="i === 0 || pessoas[i - 1].nome !== pessoa.nome">
+      <td [attr.rowspan]="contarOcorrencias(pessoa.nome)">{{pessoa.nome}}</td>
+      <td>{{pessoa.signo}}</td>
+      <td>{{pessoa.sobrenomes}}</td>
+    </tr>
+    <tr *ngIf="i !== 0 && pessoas[i - 1].nome === pessoa.nome">
+      <td>{{pessoa.signo}}</td>
+      <td>{{pessoa.sobrenomes}}</td>
+    </tr>
+  </ng-container>
+</table> -->
+
+<!-- <table>
+  <tr>
+    <th>Nome</th>
+    <th>Saldo</th>
+    <th>Divida</th>
+    <th>Pago para TS</th>
+    <th>Sobrenomes</th>
+  </tr>
+  <ng-container *ngFor="let pessoa of pessoas; let i = index">
+    <ng-container *ngFor="let detalhe of pessoa.detalhes; let j = index">
+      <tr *ngIf="j === 0 || pessoa.detalhes[j - 1].sobrenomes !== detalhe.sobrenomes">
+        <td [attr.rowspan]="contarOcorrencias(pessoa.nome, detalhe.sobrenomes)">{{pessoa.nome}}</td>
+        <td [attr.rowspan]="contarOcorrencias(pessoa.nome, detalhe.sobrenomes)">{{pessoa.saldo}}</td>
+        <td>{{detalhe.divida}}</td>
+        <td>{{detalhe.pagoParaTS}}</td>
+        <td>{{detalhe.sobrenomes}}</td>
+      </tr>
+      <tr *ngIf="j !== 0 && pessoa.detalhes[j - 1].sobrenomes === detalhe.sobrenomes">
+        <td>{{pessoa.saldo}}</td>
+        <td>{{detalhe.divida}}</td>
+        <td>{{detalhe.pagoParaTS}}</td>
+        <td>{{detalhe.sobrenomes}}</td>
+      </tr>
+    </ng-container>
+  </ng-container>
+</table> -->
+
